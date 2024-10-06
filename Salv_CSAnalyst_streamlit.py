@@ -125,13 +125,13 @@ if uploaded_file is not None:
     st.dataframe(currency_conversion_issues)
 
     # Export to CSV
-    csv = currency_conversion_issues.to_csv(index=False)
-    st.download_button(
-        label="Download Currency Conversion Issues",
-        data=csv,
-        file_name="currency_conversion_issues.csv",
-        mime="text/csv",
-    )
+    #csv = currency_conversion_issues.to_csv(index=False)
+    #st.download_button(
+        #label="Download Currency Conversion Issues",
+        #data=csv,
+        #file_name="currency_conversion_issues.csv",
+        #mime="text/csv",
+    #)
 
     # STEP7. Check for outliers in exchange rates
     st.subheader("Exchange Rate Outliers")
