@@ -1,15 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import streamlit as st
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 import sqlite3
-
+import io
 
 # Set page config
 st.set_page_config(page_title="Financial Data Analysis", layout="wide")
@@ -109,6 +103,7 @@ if uploaded_file is not None:
     SELECT 
         id,
         sender_account,
+        date_created,
         receiver_account,
         original_amount,
         amount AS amount_received,
@@ -174,6 +169,17 @@ if uploaded_file is not None:
     plt.tight_layout()
     st.pyplot(fig)
 
+    # Result and Recommendation
+    st.header("Result and Recommendation")
+    st.markdown("""
+    1.  About 957 transactions have missing date, 3 missing sender account, 1 missing receiver account with 4 missing sender and receiver name
+
+    2.  No duplicate transactions and no same currency is pair together
+
+    3.   About 3793 transactions  have incorrect currency conversions. Amount received by the receiver seem to be the incorrect amount based on the currency rate.
+
+    4. Further investigation shows that most incorrect currency conversion occur on 2021-02 and 2021-03 at different days and time. It is advisable for the engineers to look into what might have cause this issue to prevent further future occurrence
+    """)
+
 else:
     st.write("Please upload a CSV file to begin the analysis.")
-
