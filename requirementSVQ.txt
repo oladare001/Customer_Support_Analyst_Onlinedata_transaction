@@ -1,5 +1,6 @@
 pandas 
-sqlalchemy. orm 
 matplotlib.pyplot
 seaborn 
 sqlite3
+streamlit
+io
