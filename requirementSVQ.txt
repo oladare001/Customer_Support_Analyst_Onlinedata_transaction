@@ -1,6 +1,4 @@
-pandas 
-matplotlib.pyplot
-seaborn 
-sqlite3
 streamlit
-io
+pandas
+matplotlib
+seaborn
