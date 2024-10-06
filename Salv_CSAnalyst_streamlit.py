@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib as plt
 import seaborn as sns
 import sqlite3
-import os
+
 
 # Set page config
 st.set_page_config(page_title="Financial Data Analysis", layout="wide")
